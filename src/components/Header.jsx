@@ -36,11 +36,9 @@ class Header extends React.Component {
         <Link data-testid="link-to-profile" to="/profile">Profile</Link>
         <Link data-testid="link-to-search" to="/search">Search</Link>
         <Link data-testid="link-to-favorites" to="/favorites">Favorites</Link>
-        <h1
-          data-testid="header-user-name"
-        >
-          { loading ? <Loading /> : userName}
-        </h1>
+        {loading
+          ? <Loading />
+          : <h1 data-testid="header-user-name">{userName}</h1>}
       </div>
     );
   }
