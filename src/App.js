@@ -14,7 +14,11 @@ class App extends React.Component {
       <BrowserRouter>
         <Switch>
           <Route path="/profile/edit" component={ ProfileEdit } />
-          <Route path="/album/:id" component={ Album } />
+          <Route
+            exact
+            path="/album/:id"
+            render={ ({ match }) => <Album match={ match } /> }
+          />
           <Route path="/favorites" component={ Favorites } />
           <Route exact path="/profile" component={ Profile } />
           <Route path="/search" component={ Search } />
